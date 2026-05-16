@@ -10,49 +10,46 @@
   />
   <style>
     :root {
-      --bg: #f5f0e8;
-      --surface: #fffaf1;
-      --surface-2: #efe6d8;
+      --bg: #f6f0e6;
+      --surface: #fffaf2;
+      --surface-soft: #f1e7d9;
       --ink: #24313d;
-      --muted: #6d747c;
-      --line: #ded2c2;
-      --navy: #193243;
+      --muted: #69727c;
+      --line: #dfd3c2;
+      --navy: #173142;
+      --navy-2: #21394b;
       --teal: #0f766e;
-      --teal-dark: #0b5f59;
-      --clay: #9f3f32;
+      --teal-dark: #0a5d57;
+      --red: #9e3f34;
       --orange: #d97728;
-      --blue: #2d6cdf;
-      --shadow: 0 18px 50px rgba(25, 50, 67, 0.12);
+      --green-soft: #e5f3e9;
+      --blue-soft: #e8f0f9;
+      --shadow: 0 18px 45px rgba(25, 50, 67, 0.11);
+      --shadow-soft: 0 10px 28px rgba(25, 50, 67, 0.07);
       --radius-lg: 28px;
       --radius-md: 18px;
       --radius-sm: 12px;
-      --max: 1120px;
+      --max: 1100px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 18% 12%, rgba(15, 118, 110, 0.12), transparent 30%),
-        radial-gradient(circle at 82% 4%, rgba(159, 63, 50, 0.11), transparent 26%),
-        var(--bg);
-      line-height: 1.65;
+        radial-gradient(circle at 8% 4%, rgba(15, 118, 110, 0.12), transparent 30%),
+        radial-gradient(circle at 92% 0%, rgba(159, 63, 52, 0.10), transparent 28%),
+        linear-gradient(180deg, #f8f1e7 0%, #f5efe6 45%, #f7f1e8 100%);
+      line-height: 1.58;
       word-break: keep-all;
+      overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    strong { font-weight: 900; }
 
     .container {
       width: min(var(--max), calc(100% - 40px));
@@ -62,14 +59,14 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 30;
       backdrop-filter: blur(18px);
-      background: rgba(245, 240, 232, 0.86);
-      border-bottom: 1px solid rgba(222, 210, 194, 0.72);
+      background: rgba(246, 240, 230, 0.88);
+      border-bottom: 1px solid rgba(223, 211, 194, 0.8);
     }
 
     .nav-inner {
-      height: 72px;
+      height: 62px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -79,44 +76,40 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
+      gap: 10px;
+      font-weight: 950;
+      letter-spacing: -0.05em;
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 13px;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
       background: linear-gradient(135deg, var(--teal), var(--navy));
       color: #fff;
       display: grid;
       place-items: center;
-      box-shadow: 0 12px 30px rgba(15, 118, 110, 0.28);
-      font-size: 18px;
+      box-shadow: 0 10px 24px rgba(15, 118, 110, 0.22);
+      font-size: 16px;
     }
 
     .nav-links {
       display: flex;
-      gap: 18px;
+      gap: 16px;
       align-items: center;
-      font-size: 14px;
+      font-size: 13px;
       color: var(--muted);
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    .nav-links a:hover {
-      color: var(--teal-dark);
-    }
+    .nav-links a:hover { color: var(--teal-dark); }
 
-    .hero {
-      padding: 86px 0 58px;
-    }
+    .hero { padding: 56px 0 36px; }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 42px;
+      grid-template-columns: 1fr 0.92fr;
+      gap: 34px;
       align-items: center;
     }
 
@@ -124,39 +117,38 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 12px;
-      border: 1px solid rgba(15, 118, 110, 0.2);
-      background: rgba(255, 250, 241, 0.76);
+      padding: 7px 11px;
+      border: 1px solid rgba(15, 118, 110, 0.18);
+      background: rgba(255, 250, 242, 0.82);
       border-radius: 999px;
       color: var(--teal-dark);
-      font-weight: 900;
-      font-size: 13px;
-      letter-spacing: 0.02em;
+      font-weight: 950;
+      font-size: 12px;
+      letter-spacing: 0.03em;
     }
 
     h1 {
-      margin: 24px 0 22px;
-      font-size: clamp(44px, 7vw, 82px);
+      margin: 18px 0 18px;
+      font-size: clamp(42px, 6vw, 74px);
       line-height: 0.98;
-      letter-spacing: -0.075em;
+      letter-spacing: -0.08em;
     }
 
-    .hero h1 span {
-      color: var(--teal-dark);
-    }
+    .hero h1 span { color: var(--teal-dark); }
 
     .lead {
-      max-width: 660px;
-      color: #48535d;
-      font-size: clamp(18px, 2vw, 22px);
-      letter-spacing: -0.03em;
+      max-width: 650px;
+      color: #4c5660;
+      font-size: clamp(17px, 1.75vw, 20px);
+      letter-spacing: -0.035em;
+      margin: 0;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
+      gap: 10px;
+      margin-top: 24px;
     }
 
     .btn {
@@ -164,301 +156,288 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-height: 48px;
-      padding: 0 18px;
+      min-height: 44px;
+      padding: 0 16px;
       border-radius: 999px;
-      font-weight: 900;
+      font-weight: 950;
       border: 1px solid transparent;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+    .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
       color: #fff;
       background: var(--teal);
-      box-shadow: 0 18px 35px rgba(15, 118, 110, 0.22);
+      box-shadow: 0 14px 28px rgba(15, 118, 110, 0.21);
     }
 
     .btn-ghost {
       color: var(--ink);
-      background: rgba(255, 250, 241, 0.82);
+      background: rgba(255, 250, 242, 0.85);
       border-color: var(--line);
     }
 
     .hero-note {
-      margin-top: 20px;
+      margin: 16px 0 0;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
+    }
+
+    .quick-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .quick-stat {
+      padding: 10px 13px;
+      border-radius: 16px;
+      background: rgba(255, 250, 242, 0.78);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      min-width: 110px;
+    }
+
+    .quick-stat b {
+      display: block;
+      color: var(--teal-dark);
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    .quick-stat span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
     }
 
     .demo-card {
       position: relative;
-      min-height: 560px;
-      border-radius: 36px;
-      background:
-        linear-gradient(180deg, rgba(255, 250, 241, 0.94), rgba(239, 230, 216, 0.9));
-      border: 1px solid rgba(222, 210, 194, 0.95);
+      min-height: 455px;
+      border-radius: 32px;
+      background: linear-gradient(180deg, rgba(255, 250, 242, 0.96), rgba(239, 230, 216, 0.92));
+      border: 1px solid rgba(223, 211, 194, 0.98);
       box-shadow: var(--shadow);
       overflow: hidden;
-      padding: 24px;
+      padding: 18px;
     }
 
     .browser {
-      height: 420px;
-      border-radius: 24px;
+      height: 330px;
+      border-radius: 22px;
       background: #fdfbf7;
       border: 1px solid #e2d8cb;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8);
       overflow: hidden;
       position: relative;
     }
 
     .browser-top {
-      height: 44px;
+      height: 38px;
       display: flex;
       align-items: center;
       gap: 7px;
-      padding: 0 16px;
+      padding: 0 14px;
       background: #efe8dc;
       border-bottom: 1px solid #ded2c2;
     }
 
     .dot {
-      width: 10px;
-      height: 10px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       background: #d2c4b5;
     }
 
-    .mock-page {
-      padding: 22px;
-    }
+    .mock-page { padding: 18px; }
 
     .mock-title {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: -0.06em;
-      margin-bottom: 16px;
+      font-size: 20px;
+      font-weight: 950;
+      letter-spacing: -0.065em;
+      margin-bottom: 12px;
     }
 
     .mock-search {
-      height: 46px;
-      border-radius: 14px;
+      height: 40px;
+      border-radius: 13px;
       background: #fff;
       border: 1px solid #dfd5c8;
       display: flex;
       align-items: center;
-      padding: 0 16px;
+      padding: 0 14px;
       color: var(--muted);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+      font-size: 13px;
     }
 
     .mock-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 9px;
+      padding-right: 128px;
     }
 
     .mock-tile {
-      min-height: 86px;
-      border-radius: 16px;
+      min-height: 74px;
+      border-radius: 14px;
       background: #f3eee7;
       border: 1px solid #e0d7ca;
-      padding: 14px;
-      font-size: 13px;
+      padding: 11px;
+      font-size: 11px;
       color: var(--muted);
     }
 
     .mock-tile strong {
       display: block;
       color: var(--ink);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
+      font-size: 12px;
     }
 
     .highlight-box {
       position: absolute;
-      left: 144px;
-      top: 184px;
-      width: 118px;
-      height: 74px;
-      border: 3px solid var(--clay);
-      border-radius: 14px;
-      box-shadow: 0 0 0 8px rgba(159, 63, 50, 0.12);
+      left: 122px;
+      top: 144px;
+      width: 95px;
+      height: 63px;
+      border: 3px solid var(--red);
+      border-radius: 13px;
+      box-shadow: 0 0 0 7px rgba(159, 63, 52, 0.11);
     }
 
     .callout {
       position: absolute;
-      left: 70px;
-      top: 272px;
-      max-width: 230px;
+      left: 50px;
+      top: 224px;
+      max-width: 205px;
       background: #fff;
-      border: 1px solid rgba(159, 63, 50, 0.32);
-      color: var(--clay);
-      padding: 12px 14px;
-      border-radius: 16px;
-      font-size: 13px;
-      font-weight: 900;
-      box-shadow: 0 12px 30px rgba(159, 63, 50, 0.15);
+      border: 1px solid rgba(159, 63, 52, 0.3);
+      color: var(--red);
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-size: 12px;
+      font-weight: 950;
+      box-shadow: 0 10px 24px rgba(159, 63, 52, 0.13);
     }
 
     .assistant-panel {
       position: absolute;
-      right: 22px;
-      top: 72px;
-      width: 250px;
-      border-radius: 24px;
+      right: 18px;
+      top: 58px;
+      width: 210px;
+      border-radius: 22px;
       background: var(--teal);
       color: #fff;
-      box-shadow: 0 22px 45px rgba(15, 118, 110, 0.28);
+      box-shadow: 0 20px 38px rgba(15, 118, 110, 0.27);
       overflow: hidden;
     }
 
     .panel-head {
-      padding: 16px 18px;
+      padding: 13px 15px;
       background: rgba(0, 0, 0, 0.12);
-      font-weight: 900;
+      font-weight: 950;
+      font-size: 14px;
     }
 
     .panel-body {
-      padding: 18px;
+      padding: 14px;
       display: grid;
-      gap: 12px;
+      gap: 9px;
     }
 
     .panel-bubble {
-      border-radius: 16px;
-      padding: 12px;
+      border-radius: 14px;
+      padding: 10px;
       background: rgba(255, 255, 255, 0.12);
-      font-size: 13px;
+      font-size: 12px;
+      line-height: 1.45;
     }
 
     .panel-bubble strong {
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .status-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 18px;
+      gap: 10px;
+      margin-top: 12px;
     }
 
     .status-item {
-      border-radius: 18px;
-      background: rgba(255, 250, 241, 0.9);
+      border-radius: 16px;
+      background: rgba(255, 250, 242, 0.92);
       border: 1px solid var(--line);
-      padding: 14px;
+      padding: 12px;
     }
 
     .status-item strong {
       display: block;
       color: var(--teal-dark);
-      font-size: 24px;
+      font-size: 21px;
       line-height: 1;
     }
 
     .status-item span {
       color: var(--muted);
-      font-size: 12px;
-      font-weight: 800;
+      font-size: 11px;
+      font-weight: 850;
     }
 
-    section {
-      padding: 58px 0;
-    }
+    section { padding: 42px 0; }
 
     .section-head {
       display: flex;
       justify-content: space-between;
-      gap: 24px;
+      gap: 26px;
       align-items: flex-end;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .section-kicker {
-      color: var(--clay);
-      font-size: 13px;
+      color: var(--red);
+      font-size: 12px;
       font-weight: 950;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
     h2 {
       margin: 0;
-      font-size: clamp(30px, 4vw, 52px);
+      font-size: clamp(30px, 4vw, 48px);
       line-height: 1.06;
-      letter-spacing: -0.07em;
+      letter-spacing: -0.075em;
     }
 
     .section-desc {
       color: var(--muted);
-      max-width: 440px;
+      max-width: 430px;
       margin: 0;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .card {
-      background: rgba(255, 250, 241, 0.86);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      box-shadow: 0 10px 35px rgba(25, 50, 67, 0.06);
-    }
-
-    .card-icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 15px;
-      background: rgba(15, 118, 110, 0.12);
-      color: var(--teal-dark);
-      font-size: 20px;
-      margin-bottom: 18px;
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
-      letter-spacing: -0.05em;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
       font-size: 15px;
     }
 
-    .problem-list {
-      display: grid;
-      gap: 12px;
-    }
+    .problem-list { display: grid; gap: 10px; }
 
     .problem-item {
       display: grid;
-      grid-template-columns: 76px 1fr auto;
-      gap: 18px;
+      grid-template-columns: 58px 1fr auto;
+      gap: 14px;
       align-items: center;
-      padding: 18px;
+      padding: 14px 16px;
       border: 1px solid var(--line);
-      border-radius: 22px;
-      background: rgba(255, 250, 241, 0.82);
+      border-radius: 19px;
+      background: rgba(255, 250, 242, 0.78);
+      box-shadow: 0 8px 22px rgba(25, 50, 67, 0.045);
     }
 
     .num {
-      width: 52px;
-      height: 52px;
-      border-radius: 18px;
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
       background: var(--navy);
       color: #fff;
       display: grid;
@@ -467,64 +446,105 @@
     }
 
     .problem-item h3 {
-      margin: 0 0 4px;
-      letter-spacing: -0.04em;
+      margin: 0 0 2px;
+      letter-spacing: -0.045em;
+      font-size: 18px;
     }
 
     .problem-item p {
       margin: 0;
       color: var(--muted);
+      font-size: 14px;
     }
 
     .tag {
-      padding: 8px 10px;
+      padding: 7px 10px;
       border-radius: 999px;
-      background: rgba(159, 63, 50, 0.1);
-      color: var(--clay);
-      font-weight: 900;
+      background: rgba(159, 63, 52, 0.09);
+      color: var(--red);
+      font-weight: 950;
       font-size: 12px;
       white-space: nowrap;
     }
 
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      background: rgba(255, 250, 242, 0.84);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(15, 118, 110, 0.11);
+      color: var(--teal-dark);
+      font-size: 19px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+      letter-spacing: -0.055em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .split {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 20px;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 18px;
       align-items: stretch;
     }
 
     .dark-panel {
-      border-radius: var(--radius-lg);
-      background: var(--navy);
+      border-radius: 27px;
+      background: linear-gradient(150deg, var(--navy), #102637);
       color: #fff;
-      padding: 30px;
+      padding: 28px;
       box-shadow: var(--shadow);
     }
 
-    .dark-panel p {
-      color: rgba(255, 255, 255, 0.72);
-    }
+    .dark-panel .section-kicker { color: #f0b37e; }
+    .dark-panel p { color: rgba(255, 255, 255, 0.72); }
 
     .flow {
       display: grid;
-      gap: 10px;
+      gap: 9px;
+      margin-top: 20px;
     }
 
     .flow-step {
       display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 14px;
+      grid-template-columns: 40px 1fr;
+      gap: 12px;
       align-items: start;
-      padding: 16px;
-      border-radius: 18px;
+      padding: 13px;
+      border-radius: 16px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 13px;
     }
 
     .flow-step b {
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 11px;
       display: grid;
       place-items: center;
       background: rgba(255, 255, 255, 0.14);
@@ -532,112 +552,154 @@
 
     .flow-step strong {
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
+      font-size: 14px;
     }
 
     .architecture {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
     }
 
     .arch-card {
       position: relative;
-      min-height: 190px;
-      border-radius: 24px;
-      background: rgba(255, 250, 241, 0.86);
+      min-height: 158px;
+      border-radius: 22px;
+      background: rgba(255, 250, 242, 0.84);
       border: 1px solid var(--line);
-      padding: 22px;
+      padding: 19px;
       overflow: hidden;
+      box-shadow: var(--shadow-soft);
     }
 
     .arch-card::after {
       content: "";
       position: absolute;
-      inset: auto -32px -52px auto;
-      width: 120px;
-      height: 120px;
+      inset: auto -40px -64px auto;
+      width: 124px;
+      height: 124px;
       border-radius: 50%;
-      background: rgba(15, 118, 110, 0.08);
+      background: rgba(15, 118, 110, 0.075);
     }
 
     .arch-card small {
       display: inline-block;
-      color: var(--clay);
+      color: var(--red);
       font-weight: 950;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      font-size: 12px;
     }
 
     .arch-card h3 {
-      margin: 0 0 8px;
-      letter-spacing: -0.05em;
+      margin: 0 0 7px;
+      letter-spacing: -0.055em;
+      font-size: 19px;
     }
 
     .arch-card p {
       margin: 0;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
-    .decision-grid {
+    .risk-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      gap: 14px;
     }
 
-    .decision {
-      border-radius: var(--radius-lg);
-      padding: 26px;
+    .risk-card {
+      border-radius: 24px;
+      padding: 21px;
       border: 1px solid var(--line);
-      background: rgba(255, 250, 241, 0.86);
+      background: rgba(255, 250, 242, 0.84);
+      box-shadow: var(--shadow-soft);
     }
 
-    .decision h3 {
-      margin: 0 0 10px;
-      letter-spacing: -0.05em;
+    .risk-card h3 {
+      margin: 0 0 8px;
+      letter-spacing: -0.055em;
+      font-size: 20px;
     }
 
-    .decision p {
+    .risk-card p {
       margin: 0;
       color: var(--muted);
+      font-size: 14px;
     }
 
     .roadmap {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+      gap: 12px;
     }
 
     .roadmap-card {
-      padding: 22px;
-      border-radius: 24px;
-      background: rgba(255, 250, 241, 0.86);
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(255, 250, 242, 0.84);
       border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
     }
 
     .roadmap-card strong {
       display: inline-flex;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       color: var(--teal-dark);
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .roadmap-card h3 {
-      margin: 0 0 8px;
-      letter-spacing: -0.05em;
+      margin: 0 0 7px;
+      letter-spacing: -0.055em;
+      font-size: 19px;
     }
 
     .roadmap-card p {
       margin: 0;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
+    }
+
+    .meta-section {
+      padding-top: 22px;
+    }
+
+    .meta-box {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 14px;
+      border-radius: 28px;
+      background: rgba(23, 49, 66, 0.97);
+      color: #fff;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .meta-box h2 { font-size: clamp(28px, 3.4vw, 42px); }
+    .meta-box p { color: rgba(255, 255, 255, 0.72); margin: 12px 0 0; }
+
+    .meta-list {
+      display: grid;
+      gap: 9px;
+      align-content: center;
+    }
+
+    .meta-pill {
+      padding: 11px 13px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 13px;
+      font-weight: 850;
     }
 
     .footer {
-      padding: 48px 0;
+      padding: 34px 0;
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .footer-inner {
@@ -645,74 +707,62 @@
       justify-content: space-between;
       gap: 18px;
       flex-wrap: wrap;
+      align-items: flex-start;
     }
 
     .footer a {
       color: var(--teal-dark);
-      font-weight: 900;
+      font-weight: 950;
     }
 
     @media (max-width: 960px) {
       .hero-grid,
-      .split {
+      .split,
+      .meta-box {
         grid-template-columns: 1fr;
       }
 
-      .cards,
-      .architecture,
-      .roadmap {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .nav-links {
-        display: none;
-      }
+      .roadmap { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      .mock-grid { padding-right: 116px; }
+      .assistant-panel { width: 190px; }
     }
 
-    @media (max-width: 640px) {
-      .container {
-        width: min(100% - 28px, var(--max));
-      }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      .hero { padding-top: 42px; }
+      section { padding: 34px 0; }
 
-      .hero {
-        padding-top: 56px;
-      }
-
-      .demo-card {
-        min-height: 500px;
-        padding: 16px;
-      }
-
+      .demo-card { min-height: 610px; padding: 14px; }
+      .browser { height: 350px; }
       .assistant-panel {
-        right: 16px;
-        top: 260px;
-        width: calc(100% - 32px);
+        right: 14px;
+        top: 365px;
+        width: calc(100% - 28px);
       }
-
-      .browser {
-        height: 420px;
+      .mock-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding-right: 0;
       }
-
-      .mock-grid,
-      .cards,
-      .architecture,
-      .decision-grid,
-      .roadmap {
-        grid-template-columns: 1fr;
-      }
-
-      .problem-item {
-        grid-template-columns: 1fr;
-      }
-
-      .tag {
-        justify-self: start;
-      }
+      .highlight-box { left: 110px; top: 140px; }
+      .callout { top: 242px; left: 35px; }
+      .status-row { margin-top: 178px; }
 
       .section-head {
         align-items: flex-start;
         flex-direction: column;
       }
+
+      .problem-item,
+      .cards,
+      .architecture,
+      .risk-grid,
+      .roadmap {
+        grid-template-columns: 1fr;
+      }
+
+      .problem-item { align-items: start; }
+      .tag { justify-self: start; }
     }
   </style>
 </head>
@@ -741,16 +791,20 @@
           <div class="eyebrow">PUBLIC ADMINISTRATION AX · CLIENT-SIDE AI COPILOT</div>
           <h1>공공서비스의<br /><span>마지막 1마일</span>을<br />덜 헤매게.</h1>
           <p class="lead">
-            국민친절 레이어는 공공서비스 신청 과정에서 사용자가 겪는 행정 문구 이해 어려움, 준비물 누락,
-            제출 불안, 반복 이동 문제를 줄이기 위한 AI 오버레이형 MVP 프로젝트입니다.
+            공공서비스 신청 중 사용자가 겪는 어려운 행정 문구, 늦게 보이는 준비물, 제출 불안, 반복 이동 문제를 줄이기 위한 AI 오버레이형 MVP 프로젝트입니다.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#solution">프로젝트 보기</a>
             <a class="btn btn-ghost" href="#risk">리스크 경계 보기</a>
           </div>
           <p class="hero-note">
-            현재 상태: 1차 MVP/PoC 완료 · 고도화 진행 예정 · 공식 행정 판단을 대체하지 않는 안내 보조 레이어
+            1차 MVP/PoC 완료 · 고도화 진행 예정 · 공식 행정 판단을 대체하지 않는 안내 보조 레이어
           </p>
+          <div class="quick-stats">
+            <div class="quick-stat"><b>MVP</b><span>발표용 데모</span></div>
+            <div class="quick-stat"><b>B2G</b><span>확장 방향</span></div>
+            <div class="quick-stat"><b>Guide</b><span>판정 아님</span></div>
+          </div>
         </div>
 
         <div class="demo-card" aria-label="AI 오버레이 데모 목업">
@@ -764,31 +818,31 @@
               <div class="mock-title">복지 서비스 신청</div>
               <div class="mock-search">어떤 민원을 찾고 계신가요?</div>
               <div class="mock-grid">
-                <div class="mock-tile"><strong>신청 시작</strong>대상 여부와 본인 인증을 확인합니다.</div>
-                <div class="mock-tile"><strong>서류 첨부</strong>필요 서류와 파일 형식을 확인합니다.</div>
-                <div class="mock-tile"><strong>제출 전 확인</strong>누락 항목과 주의사항을 점검합니다.</div>
-                <div class="mock-tile"><strong>증빙 서류</strong>마지막 단계에서 요구될 수 있습니다.</div>
-                <div class="mock-tile"><strong>신청 정보</strong>필수 입력과 선택 입력을 구분합니다.</div>
-                <div class="mock-tile"><strong>문의 경로</strong>공식 기관 확인이 필요한 지점을 분리합니다.</div>
+                <div class="mock-tile"><strong>신청 시작</strong>대상 여부와 본인 인증 확인</div>
+                <div class="mock-tile"><strong>서류 첨부</strong>필요 서류와 파일 형식 확인</div>
+                <div class="mock-tile"><strong>제출 전 확인</strong>누락 항목과 주의사항 점검</div>
+                <div class="mock-tile"><strong>증빙 서류</strong>마지막 단계 요구 가능</div>
+                <div class="mock-tile"><strong>신청 정보</strong>필수/선택 입력 구분</div>
+                <div class="mock-tile"><strong>문의 경로</strong>공식 확인 필요 지점 분리</div>
               </div>
             </div>
             <div class="highlight-box" aria-hidden="true"></div>
-            <div class="callout">준비물을 먼저 확인하세요. 이 단계에서 막히면 처음부터 다시 진행할 수 있습니다.</div>
+            <div class="callout">준비물을 먼저 확인하세요. 여기서 막히면 처음부터 다시 진행할 수 있습니다.</div>
           </div>
 
           <aside class="assistant-panel">
             <div class="panel-head">AI 안내 레이어</div>
             <div class="panel-body">
-              <div class="panel-bubble"><strong>쉬운 말 설명</strong>이 화면은 신청 전에 필요한 조건과 서류를 확인하는 단계입니다.</div>
-              <div class="panel-bubble"><strong>지금 할 일</strong>본인 인증 가능 여부와 첨부 서류 보유 여부를 먼저 확인하세요.</div>
-              <div class="panel-bubble"><strong>주의</strong>AI가 자격 여부를 판정하지 않습니다. 최종 판단은 공식 기관 기준을 확인해야 합니다.</div>
+              <div class="panel-bubble"><strong>쉬운 말 설명</strong>신청 전에 조건과 서류를 확인하는 단계입니다.</div>
+              <div class="panel-bubble"><strong>지금 할 일</strong>본인 인증과 첨부 서류 보유 여부를 먼저 확인하세요.</div>
+              <div class="panel-bubble"><strong>주의</strong>AI는 자격을 판정하지 않습니다. 최종 기준은 공식 기관에서 확인해야 합니다.</div>
             </div>
           </aside>
 
           <div class="status-row">
-            <div class="status-item"><strong>MVP</strong><span>1차 데모</span></div>
-            <div class="status-item"><strong>B2G</strong><span>확장 방향</span></div>
-            <div class="status-item"><strong>Guide</strong><span>판정 아님</span></div>
+            <div class="status-item"><strong>1st</strong><span>PoC 산출물</span></div>
+            <div class="status-item"><strong>Rule</strong><span>로컬 안내</span></div>
+            <div class="status-item"><strong>LLM</strong><span>Fallback</span></div>
           </div>
         </div>
       </div>
@@ -802,8 +856,7 @@
             <h2>정보는 있지만,<br />행동은 막힌다.</h2>
           </div>
           <p class="section-desc">
-            공공서비스 이용자는 정보를 찾지 못해서만 멈추는 것이 아닙니다. 어려운 문구, 늦게 보이는 준비물,
-            제출 실수에 대한 불안 때문에 다음 행동을 선택하지 못합니다.
+            사용자는 정보를 몰라서만 멈추지 않습니다. 어려운 문구, 늦게 보이는 준비물, 제출 실수에 대한 불안 때문에 다음 행동을 선택하지 못합니다.
           </p>
         </div>
 
@@ -812,7 +865,7 @@
             <div class="num">01</div>
             <div>
               <h3>행정 문구가 어렵다</h3>
-              <p>긴 문장과 전문 용어 때문에 지금 무엇을 해야 하는지 바로 파악하기 어렵습니다.</p>
+              <p>긴 문장과 전문 용어 때문에 지금 할 일을 바로 파악하기 어렵습니다.</p>
             </div>
             <span class="tag">용어 장벽</span>
           </article>
@@ -820,7 +873,7 @@
             <div class="num">02</div>
             <div>
               <h3>준비물을 너무 늦게 안다</h3>
-              <p>신청 마지막 단계에서야 서류나 인증 수단 부족을 발견해 왕복 비용이 커집니다.</p>
+              <p>마지막 단계에서야 서류나 인증 수단 부족을 발견합니다.</p>
             </div>
             <span class="tag">서류 누락</span>
           </article>
@@ -828,7 +881,7 @@
             <div class="num">03</div>
             <div>
               <h3>오류 후 해결책이 모호하다</h3>
-              <p>제출 실패나 인증 오류 이후 무엇을 고쳐야 하는지 알기 어려워 같은 실수를 반복합니다.</p>
+              <p>제출 실패나 인증 오류 뒤 무엇을 고쳐야 하는지 알기 어렵습니다.</p>
             </div>
             <span class="tag">루핑</span>
           </article>
@@ -836,7 +889,7 @@
             <div class="num">04</div>
             <div>
               <h3>실수에 대한 불안이 크다</h3>
-              <p>잘못 누르면 손해를 볼 것 같은 심리적 압박이 제출 직전 이탈로 이어집니다.</p>
+              <p>잘못 누르면 손해 볼 것 같은 압박이 제출 직전 이탈로 이어집니다.</p>
             </div>
             <span class="tag">정서적 마찰</span>
           </article>
@@ -852,7 +905,7 @@
             <h2>판정이 아니라,<br />길안내.</h2>
           </div>
           <p class="section-desc">
-            국민친절 레이어는 행정 대행 서비스가 아닙니다. 기존 화면 위에서 사용자가 이해하고 행동할 수 있도록 돕는 보조 레이어입니다.
+            행정을 대신 처리하는 서비스가 아니라, 기존 화면 위에서 사용자가 이해하고 행동할 수 있게 돕는 보조 레이어입니다.
           </p>
         </div>
 
@@ -860,17 +913,17 @@
           <article class="card">
             <div class="card-icon">💬</div>
             <h3>쉬운 말 설명</h3>
-            <p>복잡한 행정 문구를 사용자가 즉시 이해할 수 있는 행동 중심 문장으로 바꿉니다.</p>
+            <p>복잡한 행정 문구를 행동 중심 문장으로 바꿉니다.</p>
           </article>
           <article class="card">
             <div class="card-icon">✅</div>
             <h3>준비물 체크</h3>
-            <p>신청 중간에 당황하지 않도록 필요한 서류, 인증 수단, 선행 조건을 먼저 보여줍니다.</p>
+            <p>필요 서류, 인증 수단, 선행 조건을 먼저 보여줍니다.</p>
           </article>
           <article class="card">
             <div class="card-icon">📍</div>
             <h3>다음 행동 안내</h3>
-            <p>현재 화면에서 사용자가 눌러야 할 곳과 확인해야 할 항목을 1~3단계로 좁혀 안내합니다.</p>
+            <p>눌러야 할 곳과 확인 항목을 1~3단계로 좁힙니다.</p>
           </article>
         </div>
       </div>
@@ -882,13 +935,13 @@
           <div class="section-kicker">Process</div>
           <h2>화면을 읽고,<br />상태를 보고,<br />행동으로 바꾼다.</h2>
           <p>
-            하나의 챗봇 응답기가 아니라, 현재 화면과 사용자 행동 신호를 읽고 적절한 안내 방식으로 변환하는 레이어 구조로 설계했습니다.
+            하나의 챗봇이 아니라, 현재 화면과 사용자 행동 신호를 읽고 적절한 안내 방식으로 변환하는 레이어 구조입니다.
           </p>
           <div class="flow">
             <div class="flow-step"><b>1</b><div><strong>입력 인식</strong>화면 텍스트, 버튼, 사용자 입력, 행동 로그 수집</div></div>
-            <div class="flow-step"><b>2</b><div><strong>맥락 해석</strong>현재 화면이 어떤 업무 흐름의 어느 단계인지 추정</div></div>
-            <div class="flow-step"><b>3</b><div><strong>개입 판단</strong>혼란·불안·답답함·피로 신호와 환경 마찰을 결합</div></div>
-            <div class="flow-step"><b>4</b><div><strong>행동 유도</strong>쉬운 설명, 체크리스트, 하이라이트, TTS로 출력</div></div>
+            <div class="flow-step"><b>2</b><div><strong>맥락 해석</strong>현재 화면이 어느 업무 단계인지 추정</div></div>
+            <div class="flow-step"><b>3</b><div><strong>개입 판단</strong>혼란·불안·답답함·피로 신호와 환경 마찰 결합</div></div>
+            <div class="flow-step"><b>4</b><div><strong>행동 유도</strong>쉬운 설명, 체크리스트, 하이라이트, TTS 출력</div></div>
           </div>
         </div>
 
@@ -896,22 +949,22 @@
           <article class="arch-card">
             <small>Layer 01</small>
             <h3>Client-side Overlay</h3>
-            <p>기존 공공 시스템을 직접 수정하지 않고 화면 위에 안내 레이어를 표시합니다.</p>
+            <p>기존 시스템을 수정하지 않고 화면 위에 안내를 표시합니다.</p>
           </article>
           <article class="arch-card">
             <small>Layer 02</small>
             <h3>Rule-based Guide</h3>
-            <p>반복되는 화면과 병목 구간은 로컬 룰 기반으로 빠르게 안내합니다.</p>
+            <p>반복 화면과 병목 구간은 로컬 룰로 빠르게 안내합니다.</p>
           </article>
           <article class="arch-card">
             <small>Layer 03</small>
             <h3>LLM Fallback</h3>
-            <p>예상 밖 질문, 오류, 절차 이탈 상황에서만 제한적으로 AI를 호출합니다.</p>
+            <p>예상 밖 질문, 오류, 절차 이탈 상황에서만 AI를 호출합니다.</p>
           </article>
           <article class="arch-card">
             <small>Layer 04</small>
             <h3>Risk Boundary</h3>
-            <p>자격 판정, 법적 해석, 제출 대행은 제외하고 추가 확인 필요를 명시합니다.</p>
+            <p>자격 판정, 법적 해석, 제출 대행은 제외합니다.</p>
           </article>
         </div>
       </div>
@@ -925,26 +978,26 @@
             <h2>할 수 있는 것과<br />하지 않는 것을 나눈다.</h2>
           </div>
           <p class="section-desc">
-            공공행정 AI는 기능보다 경계가 중요합니다. 사용자를 돕되, 공식 판단처럼 보이는 순간 신뢰와 책임 문제가 커집니다.
+            공공행정 AI는 기능보다 경계가 중요합니다. 사용자를 돕되, 공식 판단처럼 보이는 순간 책임 문제가 커집니다.
           </p>
         </div>
 
-        <div class="decision-grid">
-          <article class="decision">
+        <div class="risk-grid">
+          <article class="risk-card">
             <h3>AI는 자격을 판정하지 않는다</h3>
-            <p>수급 가능 여부, 법적 예외, 행정 판단은 공식 기관의 영역으로 남기고 AI는 확인 포인트만 제공합니다.</p>
+            <p>수급 가능 여부와 행정 판단은 공식 기관의 영역으로 남기고, AI는 확인 포인트만 제공합니다.</p>
           </article>
-          <article class="decision">
+          <article class="risk-card">
             <h3>기관 시스템을 먼저 건드리지 않는다</h3>
-            <p>초기 MVP는 직접 연동보다 미러 화면과 오버레이 데모를 통해 보안·권한 리스크를 줄입니다.</p>
+            <p>초기 MVP는 직접 연동보다 미러 화면과 오버레이 데모로 보안·권한 리스크를 줄입니다.</p>
           </article>
-          <article class="decision">
+          <article class="risk-card">
             <h3>확정 안내 대신 검증 포인트를 준다</h3>
-            <p>전체 아키텍처를 모르는 경우 “이쪽입니다”가 아니라 “이 항목이 보이면 맞는 경로입니다”로 안내합니다.</p>
+            <p>“이쪽입니다”가 아니라 “이 항목이 보이면 맞는 경로입니다”로 안내합니다.</p>
           </article>
-          <article class="decision">
+          <article class="risk-card">
             <h3>개인정보 처리는 최소화한다</h3>
-            <p>민감 정보 원문 저장보다 화면 단위 안내, 로컬 처리, TTL, 익명화 로그를 우선 검토합니다.</p>
+            <p>민감 정보 원문 저장보다 로컬 처리, TTL, 익명화 로그를 우선 검토합니다.</p>
           </article>
         </div>
       </div>
@@ -958,7 +1011,7 @@
             <h2>완성작이 아니라,<br />살아있는 프로젝트.</h2>
           </div>
           <p class="section-desc">
-            현재 산출물은 1차 MVP/PoC입니다. 이후에는 특정 민원 플로우를 기준으로 룰 엔진, 오버레이 안정성, 검증 지표를 고도화합니다.
+            현재 산출물은 1차 MVP/PoC입니다. 이후 특정 민원 플로우 기준으로 룰 엔진, 오버레이 안정성, 검증 지표를 고도화합니다.
           </p>
         </div>
 
@@ -966,23 +1019,42 @@
           <article class="roadmap-card">
             <strong>v0.1 · Done</strong>
             <h3>발표용 MVP</h3>
-            <p>문제 정의, 와이어프레임, 데모 흐름, 기술·리스크 검토를 하나의 스토리로 구성했습니다.</p>
+            <p>문제 정의, 데모 흐름, 기술·리스크 검토를 스토리화했습니다.</p>
           </article>
           <article class="roadmap-card">
             <strong>v0.2 · Next</strong>
             <h3>특정 플로우 정밀화</h3>
-            <p>복지로 등 특정 신청 흐름 1개를 기준으로 병목 구간과 안내 룰을 세분화합니다.</p>
+            <p>복지로 등 신청 흐름 1개를 기준으로 안내 룰을 세분화합니다.</p>
           </article>
           <article class="roadmap-card">
             <strong>v0.3 · Build</strong>
             <h3>오버레이 룰 엔진</h3>
-            <p>화면 요소 감지, 버튼 하이라이트, 체크리스트 출력 로직을 재사용 가능한 구조로 정리합니다.</p>
+            <p>요소 감지, 버튼 하이라이트, 체크리스트 로직을 재사용 구조로 정리합니다.</p>
           </article>
           <article class="roadmap-card">
             <strong>v1.0 · Target</strong>
             <h3>B2G PoC 제안</h3>
-            <p>기관 대상 PoC 제안이 가능하도록 시연, 리스크 경계, 운영 모델, 개선 지표를 패키징합니다.</p>
+            <p>시연, 리스크 경계, 운영 모델, 개선 지표를 패키징합니다.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="meta-section">
+      <div class="container">
+        <div class="meta-box">
+          <div>
+            <div class="section-kicker">Portfolio Summary</div>
+            <h2>AI 서비스기획 관점의<br />문제정의형 PoC</h2>
+            <p>
+              사용자의 마찰을 구조화하고, 구현 가능한 MVP 범위와 리스크 경계를 먼저 세운 뒤, 데모와 로드맵으로 확장 가능성을 제시한 프로젝트입니다.
+            </p>
+          </div>
+          <div class="meta-list">
+            <div class="meta-pill">역할: 문제정의 · MVP 설계 · 데모 시나리오 · 리스크 리뷰</div>
+            <div class="meta-pill">키워드: Public AX · Client-side AI · Overlay · RAG/Rule Guide</div>
+            <div class="meta-pill">상태: 1차 PoC 완료, 고도화 진행 예정</div>
+          </div>
         </div>
       </div>
     </section>
